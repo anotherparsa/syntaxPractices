@@ -9,5 +9,6 @@ echo "Using Array"
 Array=(one two three four "This is five")
 echo "${Array[0]}"
 echo "${Array[4]}"
+echo "the first argument is $1 the second is $2"
 exit 0
 
