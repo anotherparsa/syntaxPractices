@@ -10,7 +10,7 @@ class Node{
             this->value = value;
             this->next = nullptr;
         }
-}
+};
 
 class LinkedList{
     private:
@@ -24,5 +24,13 @@ class LinkedList{
             this->tail = nullptr;
             this->length = 0;
         }
-}
 
+        bool is_list_empty(){
+            return (this->head == nullptr || this->length == 0);
+        }
+};
+
+int main(){
+    LinkedList* my_linked_list = new LinkedList();
+    cout << my_linked_list->is_list_empty() << endl;
+}
