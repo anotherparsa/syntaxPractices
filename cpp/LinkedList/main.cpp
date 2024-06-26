@@ -62,6 +62,22 @@ class LinkedList{
                 cout << endl;
             }
         }
+
+        Node* get_node(int index){
+            if (this->is_list_empty()){
+                return nullptr;
+            }else{
+                if (index < 0 || index >= this->length){
+                    return nullptr;
+                }else{
+                    Node* temp = this->head;
+                    for (int i = 0 ; i < index ; i++){
+                        temp = temp->next;
+                    }
+                    return temp;
+                }
+            }
+        }
 };
 
 int main(){
