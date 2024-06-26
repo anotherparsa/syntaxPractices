@@ -40,7 +40,7 @@ class LinkedList{
         void print_tail(){
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
-            }eles{
+            }else{
                 cout << "Tail address: " << this->tail << "Tail value: " << this->tail->value << endl;
             }
         }
@@ -66,9 +66,11 @@ class LinkedList{
         Node* get_node(int index){
             if (this->is_list_empty()){
                 return nullptr;
+                cout << "There are no Nodes in the list" << endl;
             }else{
                 if (index < 0 || index >= this->length){
                     return nullptr;
+                    cout << "Invalid Index" << endl;
                 }else{
                     Node* temp = this->head;
                     for (int i = 0 ; i < index ; i++){
@@ -78,9 +80,25 @@ class LinkedList{
                 }
             }
         }
+
+        void append_node(int value){
+            Node* new_node = new Node(value);
+            if (this->is_list_empty()){
+                this->head = new_node;
+                this->tail = new_node;
+            }else{
+                this->tail->next = new_node;
+                this->tail = new_node;
+            }
+            this->length++;
+            cout << "New Node with the value of " << value << " Has been added to the end of the list" << endl;
+        }
 };
 
 int main(){
     LinkedList* my_linked_list = new LinkedList();
-    cout << my_linked_list->is_list_empty() << endl;
+    my_linked_list->print_list();
+    my_linked_list->append_node(1);
+    my_linked_list->append_node(2);
+    my_linked_list->print_list();
 }
