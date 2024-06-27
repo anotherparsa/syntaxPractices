@@ -110,7 +110,13 @@ class LinkedList{
                     this->tail = nullptr;
                 }
             }
-
+        }
+        void print_node_value(int index){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                cout << "The Node at the index of " << index << " Has the value of " << this->get_node(index)->value << endl;
+            }
         }
 };
 
@@ -126,5 +132,7 @@ int main(){
     my_linked_list->delete_last_node();
     my_linked_list->append_node(5);
     my_linked_list->print_list();
+    my_linked_list->print_node_value(0);
+    my_linked_list->print_node_value(3);
 
 }
