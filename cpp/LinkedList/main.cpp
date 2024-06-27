@@ -111,13 +111,35 @@ class LinkedList{
                 }
             }
         }
+
         void print_node_value(int index){
             if (this->is_list_empty()){
-                cout << "There are no Nodes in the list" << endl;
+                cout << "There are no Nodes in the list " << endl;
             }else{
-                cout << "The Node at the index of " << index << " Has the value of " << this->get_node(index)->value << endl;
+                if (index < 0 || index >= this->length){
+                    cout << "Invalid Index " << endl;
+                }else{
+                    cout << "The Node at the index of " << index << " Has the value of " << this->get_node(index)->value << endl;
+                }
             }
         }
+
+        void set_node_value(int index, int value){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list " << endl;
+            }else{
+                if (index < 0 || index >= this->length){
+                    cout << "Invalid Index " << endl; 
+                }else{
+                    Node* temp = this->get_node(index);
+                    cout << "The Node at index " << index << " Had the value of " << temp->value ;
+                    temp->value = value;
+                    cout << " Now it has the value of " << value << endl;
+                }
+            }
+        }
+
+
 };
 
 int main(){
@@ -134,5 +156,9 @@ int main(){
     my_linked_list->print_list();
     my_linked_list->print_node_value(0);
     my_linked_list->print_node_value(3);
+    my_linked_list->print_node_value(4);
+    my_linked_list->set_node_value(0, 10);
+    my_linked_list->set_node_value(1, 20);
+    my_linked_list->print_list();
 
 }
