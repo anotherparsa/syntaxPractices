@@ -93,6 +93,25 @@ class LinkedList{
             this->length++;
             cout << "New Node with the value of " << value << " Has been added to the end of the list" << endl;
         }
+
+        void delete_last_node(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                Node* temp = this->tail;
+                Node* previous_node = this->get_node(this->length - 2);
+                previous_node->next = nullptr;
+                this->tail = previous_node;
+                this->length--;
+                cout << "The last Node with the value of " << temp->value << " Has been removed from the end of the list " << endl;
+                delete temp;
+                if (this->length == 0){
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                }
+            }
+
+        }
 };
 
 int main(){
@@ -101,4 +120,11 @@ int main(){
     my_linked_list->append_node(1);
     my_linked_list->append_node(2);
     my_linked_list->print_list();
+    my_linked_list->append_node(3);
+    my_linked_list->append_node(4);
+    my_linked_list->print_list();
+    my_linked_list->delete_last_node();
+    my_linked_list->append_node(5);
+    my_linked_list->print_list();
+
 }
