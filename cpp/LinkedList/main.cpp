@@ -94,6 +94,19 @@ class LinkedList{
             cout << "New Node with the value of " << value << " Has been added to the end of the list" << endl;
         }
 
+        void prepend_node(int value){
+            Node* new_node = new Node(value);
+            if (this->is_list_empty()){
+                this->head = new_node;
+                this->tail = new_node;
+            }else{
+                new_node->next = this->head;
+                this->head = new_node;
+            }
+            this->length++;
+            cout << "New Node with the value of " << value << " Has been added to the beginning of the list" << endl;
+        }
+
         void delete_last_node(){
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
@@ -103,7 +116,7 @@ class LinkedList{
                 previous_node->next = nullptr;
                 this->tail = previous_node;
                 this->length--;
-                cout << "The last Node with the value of " << temp->value << " Has been removed from the end of the list " << endl;
+                cout << "The last Node with the value of " << temp->value << " Has been removed from the end of the list" << endl;
                 delete temp;
                 if (this->length == 0){
                     this->head = nullptr;
@@ -114,10 +127,10 @@ class LinkedList{
 
         void print_node_value(int index){
             if (this->is_list_empty()){
-                cout << "There are no Nodes in the list " << endl;
+                cout << "There are no Nodes in the list" << endl;
             }else{
                 if (index < 0 || index >= this->length){
-                    cout << "Invalid Index " << endl;
+                    cout << "Invalid Index" << endl;
                 }else{
                     cout << "The Node at the index of " << index << " Has the value of " << this->get_node(index)->value << endl;
                 }
@@ -126,10 +139,10 @@ class LinkedList{
 
         void set_node_value(int index, int value){
             if (this->is_list_empty()){
-                cout << "There are no Nodes in the list " << endl;
+                cout << "There are no Nodes in the list" << endl;
             }else{
                 if (index < 0 || index >= this->length){
-                    cout << "Invalid Index " << endl; 
+                    cout << "Invalid Index" << endl; 
                 }else{
                     Node* temp = this->get_node(index);
                     cout << "The Node at index " << index << " Had the value of " << temp->value ;
@@ -138,6 +151,7 @@ class LinkedList{
                 }
             }
         }
+
 
 
 };
