@@ -25,6 +25,36 @@ class LinkedList{
             this->length = 0;
         }
 
+        void start(){
+            while(true){
+                cout << "-----------------------------------------------------" << endl;
+                cout << "Linked List management center: " << endl <<
+                "choose an option below:" << endl <<
+                "0-check if list is empty?     1-print head     2-print tail     3-print length     4-print list " << endl <<
+                "5-print specific Node value by index     6-set specific Node value     7-insert Node at a specific index     8-delete Node at a specific index " << endl << 
+                "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl ;
+                int input;
+                cin >> input;
+                switch (input){
+                    case 0 : cout << is_list_empty() << endl; break;
+                    case 1 : this->print_head(); break;
+                    case 2 : this->print_tail(); break;
+                    case 3 : this->print_length(); break;
+                    case 4 : this->print_list(); break;
+                    case 5 : this->print_node_value(); break;
+                    case 6 : this->set_node_value(); break;
+                    case 7 : this->insert_node(); break;
+                    case 8 : this->delete_node(); break;            
+                    case 9 : this->append_node(); break;
+                    case 10 : this->delete_last_node(); break;
+                    case 11 : this->prepend_node(); break;
+                    case 12 : this->delete_first_node(); break;
+                    default : cout << "No valid option"; break;
+                }
+                cout << "-----------------------------------------------------" << endl;
+            }
+        }
+
         bool is_list_empty(){
             return (this->head == nullptr || this->length == 0);
         }
@@ -81,7 +111,10 @@ class LinkedList{
             }
         }
 
-        void append_node(int value){
+        void append_node(){
+            int value;
+            cout << "Please enter the value: ";
+            cin >> value;
             Node* new_node = new Node(value);
             if (this->is_list_empty()){
                 this->head = new_node;
@@ -94,7 +127,10 @@ class LinkedList{
             cout << "New Node with the value of " << value << " Has been added to the end of the list" << endl;
         }
 
-        void prepend_node(int value){
+        void prepend_node(){
+            int value;
+            cout << "Please enter the value: ";
+            cin >> value;
             Node* new_node = new Node(value);
             if (this->is_list_empty()){
                 this->head = new_node;
@@ -141,7 +177,10 @@ class LinkedList{
             }
         }
 
-        void print_node_value(int index){
+        void print_node_value(){
+            int index;
+            cout << "Please enter the index: ";
+            cin >> index;
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
             }else{
@@ -153,7 +192,13 @@ class LinkedList{
             }
         }
 
-        void set_node_value(int index, int value){
+        void set_node_value(){
+            int value;
+            int index;
+            cout << "Please enter the index: ";
+            cin >> index;
+            cout << "Please enter the value: ";
+            cin >> value;
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
             }else{
@@ -168,14 +213,20 @@ class LinkedList{
             }
         }
 
-        void insert_node(int index, int value){
+        void insert_node(){
+            int value;
+            int index;
+            cout << "Please enter the index: ";
+            cin >> index;           
+            cout << "Please enter the value: ";
+            cin >> value;
             if (index < 0 || index < this->length){
                 cout << "Invalid Index " << endl;
             }else{
                 if (index == 0 ){
-                    this->prepend_node(value);
+                    this->prepend_node();
                 }else if (index == this->length){
-                    this->append_node(value)
+                    this->append_node();
                 }else{
                     Node* new_node = new Node(value);
                     Node* previous_node = this->get_node(index - 1);
@@ -187,7 +238,10 @@ class LinkedList{
             }
         }
 
-        void delete_node(int index){
+        void delete_node(){
+            int index;
+            cout << "Please enter the index ";
+            cin >> index;
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
             }else{
@@ -201,7 +255,7 @@ class LinkedList{
                     }else{
                         Node* temp = this->get_node(index);
                         Node* previous_node = this->get_node(index - 1);
-                        prepend_node->next = temp->next;
+                        previous_node->next = temp->next;
                         this->length--;
                         cout << "Node with the value of " << temp->value << " Has been removed at index " << index << endl;
                         delete temp;
@@ -216,21 +270,6 @@ class LinkedList{
 
 int main(){
     LinkedList* my_linked_list = new LinkedList();
-    my_linked_list->print_list();
-    my_linked_list->append_node(1);
-    my_linked_list->append_node(2);
-    my_linked_list->print_list();
-    my_linked_list->append_node(3);
-    my_linked_list->append_node(4);
-    my_linked_list->print_list();
-    my_linked_list->delete_last_node();
-    my_linked_list->append_node(5);
-    my_linked_list->print_list();
-    my_linked_list->print_node_value(0);
-    my_linked_list->print_node_value(3);
-    my_linked_list->print_node_value(4);
-    my_linked_list->set_node_value(0, 10);
-    my_linked_list->set_node_value(1, 20);
-    my_linked_list->print_list();
+    my_linked_list->start();
 
 }
