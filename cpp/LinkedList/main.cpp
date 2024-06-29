@@ -29,14 +29,13 @@ class LinkedList{
             while(true){
                 cout << "Linked List management center: " << endl <<
                 "choose an option below:" << endl <<
-                "0-check if list is empty?     1-print head     2-print tail     3-print length     4-print list " << endl <<
+                "1-print head     2-print tail     3-print length     4-print list " << endl <<
                 "5-print specific Node value by index     6-set specific Node value     7-insert Node at a specific index     8-delete Node at a specific index " << endl << 
                 "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl << 
                 "13-purge List     14-check if list is sorted     15-Bubble Sort     16-Selection Sort" << endl;
                 int input;
                 cin >> input;
                 switch (input){
-                    case 0 : cout << is_list_empty() << endl; break;
                     case 1 : this->print_head(); break;
                     case 2 : this->print_tail(); break;
                     case 3 : this->print_length(); break;
