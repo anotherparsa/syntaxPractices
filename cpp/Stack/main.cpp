@@ -35,7 +35,7 @@ class Stack{
                 cout << "Stack management center: " << endl << 
                 "choose an option below: " << endl << 
                 "1-print top     2-print bottom     3-print length     4-print capcity " << endl << 
-                "5-print stack     6-print stack     7-push a Node     8-pop a Node" << endl;
+                "5-print stack     6-push Node     7-pop a Node" << endl;
                 int input;
                 cin >> input;
                 switch (input){
@@ -43,8 +43,9 @@ class Stack{
                     case 2 : this->print_bottom(); break;
                     case 3 : this->print_length(); break;
                     case 4 : this->print_capacity(); break;
-
-
+                    case 5 : this->print_stack(); break;
+                    case 6 : this->push_node(); break;
+                    case 7 : this->pop_node(); break;
                     default : cout << "No valid option"; break;
 
                 }
@@ -54,6 +55,10 @@ class Stack{
 
         bool is_stack_empty(){
             return (this->top == nullptr || this->length == 0);
+        }
+
+        bool is_stack_full(){
+            return (this->length == this->capacity);
         }
 
         void print_top(){
@@ -80,7 +85,81 @@ class Stack{
             cout << "Capacity " << this->capacity << endl;
         }
 
+        void print_stack(){
+            if (this->is_stack_empty()){
+                cout << "There are no Nodes in the stack" << endl;
+            }else{
+                cout << "Stack Elements: " << endl;
+                Node* temp = this->bottom;
+                while (temp != nullptr){
+                    cout << temp->value << " " ;
+                    temp = temp->next;
+                }
+                cout << endl;
+            }
+        }
 
+        Node* get_node(int index){
+            if (this->is_stack_empty()){
+                return nullptr;
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                if (index < 0 || index >= this->length){
+                    return nullptr;
+                    cout << "Invalid Index" << endl;
+                }else{
+                    Node* temp = this->bottom;
+                    for (int i = 0 ; i < index ; i++){
+                        temp = temp->next;
+                    }
+                    if (temp != nullptr){
+                        return temp;
+                    }else{
+                        cout << "It's null" << endl;
+                        return nullptr;
+                    }
+                }
+            }
+        }
+
+        void push_node(){
+            if (!this->is_stack_full()){
+                int value;
+                cout << "Please enter the value: " << endl;
+                cin >> value;
+                Node* new_node = new Node(value);
+                if (this->is_stack_empty()){
+                    this->bottom = new_node;
+                    this->top = new_node;
+                }else{
+                    this->top->next = new_node;
+                    this->top = new_node;
+                }
+                this->length++;
+                cout << "New Node with the value of " << value << " Has been added to the end of the list" << endl;
+            }else{
+                cout << "The stack is at full capacity" << endl;
+            }
+        }
+
+
+        void pop_node(){
+            if (this->is_stack_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                Node* temp = this->top;
+                Node* previous_node = this->get_node(this->length - 2);
+                previous_node->next = nullptr;
+                this->top = previous_node;
+                this->length--;
+                cout << "The last Node with the value of " << temp->value << " Has been removed from the end of the list" << endl;
+                delete temp;
+                if (this->length == 0){
+                    this->bottom = nullptr;
+                    this->top = nullptr;
+                }
+            }
+        }
 };
 
 

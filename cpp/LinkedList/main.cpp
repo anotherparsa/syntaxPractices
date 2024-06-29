@@ -116,7 +116,7 @@ class LinkedList{
 
         void append_node(){
             int value;
-            cout << "Please enter the value: ";
+            cout << "Please enter the value: " << endl;
             cin >> value;
             Node* new_node = new Node(value);
             if (this->is_list_empty()){
