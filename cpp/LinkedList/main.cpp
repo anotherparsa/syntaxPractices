@@ -168,6 +168,25 @@ class LinkedList{
             }
         }
 
+        void insert_node(int index, int value){
+            if (index < 0 || index < this->length){
+                cout << "Invalid Index " << endl;
+            }else{
+                if (index == 0 ){
+                    this->prepend_node(value);
+                }else if (index == this->length){
+                    this->append_node(value)
+                }else{
+                    Node* new_node = new Node(value);
+                    Node* previous_node = this->get_node(index - 1);
+                    new_node->next = previous_node->next;
+                    previous_node->next = new_node;
+                    this->length++;
+                    cout << "New Node with the value of " << value << " Has been added at index " << index << endl;
+                }
+            }
+        }
+
 
 
 };
