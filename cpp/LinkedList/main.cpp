@@ -27,12 +27,12 @@ class LinkedList{
 
         void start(){
             while(true){
-                cout << "-----------------------------------------------------" << endl;
                 cout << "Linked List management center: " << endl <<
                 "choose an option below:" << endl <<
                 "0-check if list is empty?     1-print head     2-print tail     3-print length     4-print list " << endl <<
                 "5-print specific Node value by index     6-set specific Node value     7-insert Node at a specific index     8-delete Node at a specific index " << endl << 
-                "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl ;
+                "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl << 
+                "13-purge List" << endl;
                 int input;
                 cin >> input;
                 switch (input){
@@ -49,6 +49,7 @@ class LinkedList{
                     case 10 : this->delete_last_node(); break;
                     case 11 : this->prepend_node(); break;
                     case 12 : this->delete_first_node(); break;
+                    case 13 : this->purge_list(); break;
                     default : cout << "No valid option"; break;
                 }
                 cout << "-----------------------------------------------------" << endl;
@@ -264,7 +265,24 @@ class LinkedList{
             }
         }
 
-
+        void purge_list(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                cout << "Are you sure to purge the list? enter \"Yes\"" << endl;
+                string Answer;
+                cin >> Answer;
+                if (Answer == "Yes"){
+                    cout << "Purging List: " << endl; 
+                    while (this->length != 0){
+                        this->delete_first_node();
+                        this->length--;
+                    }
+                }else{
+                    cout << "OK" << endl;
+                }
+            }
+        }
 
 };
 
