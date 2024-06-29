@@ -107,6 +107,22 @@ class LinkedList{
             cout << "New Node with the value of " << value << " Has been added to the beginning of the list" << endl;
         }
 
+        void delete_first_node(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                Node* temp = this->head;
+                this->head = this->head->next;
+                cout << "Node with the value of " << temp->value << " Has been removed from the beginning of the list" << endl;
+                delete temp;
+                this->length--;
+                if (this->length == 0){
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                }
+            }
+        }
+
         void delete_last_node(){
             if (this->is_list_empty()){
                 cout << "There are no Nodes in the list" << endl;
