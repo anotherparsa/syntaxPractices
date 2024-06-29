@@ -32,7 +32,7 @@ class LinkedList{
                 "0-check if list is empty?     1-print head     2-print tail     3-print length     4-print list " << endl <<
                 "5-print specific Node value by index     6-set specific Node value     7-insert Node at a specific index     8-delete Node at a specific index " << endl << 
                 "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl << 
-                "13-purge List     14-check if list is sorted" << endl;
+                "13-purge List     14-check if list is sorted     15-Bubble Sort     16-Selection Sort" << endl;
                 int input;
                 cin >> input;
                 switch (input){
@@ -51,6 +51,8 @@ class LinkedList{
                     case 12 : this->delete_first_node(); break;
                     case 13 : this->purge_list(); break;
                     case 14 : this->is_list_sorted(); break;
+                    case 15 : this->bubble_sort_list(); break;
+                    case 16 : this->selection_sort(); break;
                     default : cout << "No valid option"; break;
                 }
                 cout << "-----------------------------------------------------" << endl;
@@ -308,6 +310,43 @@ class LinkedList{
             }
         }
 
+        void swap_nodes(Node* first, Node* second){
+            int temp = first->value;
+            first->value  = second->value;
+            second->value = temp;
+        }
+
+        void bubble_sort_list(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                for (int i = 1 ; i <= this->length; i++){
+                    for (int j = 0 ; j < this->length - i ; j++){
+                        if (this->get_node(j)->value > this->get_node(j+1)->value){
+                            this->swap_nodes(this->get_node(j), this->get_node(j+1));
+                        }
+                    }
+                }
+                cout << "List has been bubble sorted" << endl;
+            }
+        }
+
+        void selection_sort(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                for (int i = 0 ; i < this->length ; i++){
+                    int min_index = i;
+                    for (int j = i + 1; j < this->length ; j++){
+                        if (this->get_node(j)->value < this->get_node(min_index)->value){
+                            min_index  = j;
+                        }
+                    }
+                this->swap_nodes(this->get_node(i), this->get_node(min_index));
+                cout << "List has been selection sorted" << endl;
+                }
+            }
+        }
 };
 
 int main(){
