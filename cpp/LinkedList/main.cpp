@@ -187,6 +187,29 @@ class LinkedList{
             }
         }
 
+        void delete_node(int index){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                if (index < 0 || index >= this->length){
+                    cout << "Invalid Index " << endl;
+                }else{
+                    if (index == 0){
+                        this->delete_first_node();
+                    }else if (index == this->length - 1){
+                        this->delete_last_node();
+                    }else{
+                        Node* temp = this->get_node(index);
+                        Node* previous_node = this->get_node(index - 1);
+                        prepend_node->next = temp->next;
+                        this->length--;
+                        cout << "Node with the value of " << temp->value << " Has been removed at index " << index << endl;
+                        delete temp;
+                    }
+                }
+            }
+        }
+
 
 
 };
