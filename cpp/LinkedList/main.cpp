@@ -32,7 +32,7 @@ class LinkedList{
                 "0-check if list is empty?     1-print head     2-print tail     3-print length     4-print list " << endl <<
                 "5-print specific Node value by index     6-set specific Node value     7-insert Node at a specific index     8-delete Node at a specific index " << endl << 
                 "9-append Node     10-delete last Node     11-prepend Node     12-delete first Node " << endl << 
-                "13-purge List" << endl;
+                "13-purge List     14-check if list is sorted" << endl;
                 int input;
                 cin >> input;
                 switch (input){
@@ -50,6 +50,7 @@ class LinkedList{
                     case 11 : this->prepend_node(); break;
                     case 12 : this->delete_first_node(); break;
                     case 13 : this->purge_list(); break;
+                    case 14 : this->is_list_sorted(); break;
                     default : cout << "No valid option"; break;
                 }
                 cout << "-----------------------------------------------------" << endl;
@@ -280,6 +281,29 @@ class LinkedList{
                     }
                 }else{
                     cout << "OK" << endl;
+                }
+            }
+        }
+
+        void is_list_sorted(){
+            if (this->is_list_empty()){
+                cout << "There are no Nodes in the list" << endl;
+            }else{
+                Node* first = this->head;
+                Node* second = this->head->next;
+                int flag = 1;
+                while (second != nullptr){
+                    if (first->value > second->value){
+                        flag = 0;
+                        break;
+                    }
+                    first = second;
+                    second = second->next;
+                }
+                if (flag == 1){
+                    cout << "The list is sorted " << endl;
+                }else{
+                    cout << "The list is not sorted " << endl;
                 }
             }
         }
