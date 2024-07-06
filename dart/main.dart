@@ -12,4 +12,7 @@ void main(){
 	print(dynamicvalue);
 	dynamicvalue = 10.25;
 	print(dynamicvalue);
+	String name = "Name";
+	String greeting = "Hello ";
+	print('${greeting}${name}');
 }
