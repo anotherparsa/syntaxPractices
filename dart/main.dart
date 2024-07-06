@@ -28,4 +28,8 @@ void main() {
     default:
       print("invalid option");
   }
+
+  for (int i = 0; i < 10; i++) {
+    print("${i}, times");
+  }
 }
