@@ -1,7 +1,14 @@
 void main() {
-  print_this("hello world");
+  var intVariable = returnOne();
+  print(intVariable);
+  var TwoVariable = returnTwo();
+  print(TwoVariable);
 }
 
-void print_this(String s) {
-  print(s);
+int returnOne() {
+  return 12;
+}
+
+(int, String) returnTwo() {
+  return (12, "!@");
 }
