@@ -1,19 +1,22 @@
 void main(){
-	Cookie cookie1 = Cookie();
+	Cookie cookie1 = Cookie("Circle", 16.3);
 	cookie1.baking();
 	print(cookie1.is_cooling());
 	print(cookie1.shape);
 	cookie1.shape = "square";
 	print(cookie1.shape);
-	Cookie cookie2 = Cookie();
+	Cookie cookie2 = Cookie("Circle", 20.14);
+	print(cookie2.shape);
 }
 
 class Cookie{
-	String shape = "circle";
-	double size = 15.2;
+	String? shape;
+	double? size;
 
-	Cookie(){
+	Cookie(String shape, double size){
 		print("Constructor has been executed");
+		this.shape = shape;
+		this.size = size;
 	}
 
 	void baking(){
