@@ -5,4 +5,7 @@ void main() {
   } else {
     print("you're not in legal age");
   }
+
+  String boolean = 20 != 20 ? "true" : "false";
+  print(boolean);
 }
