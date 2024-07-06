@@ -38,4 +38,10 @@ void main() {
     print(i);
     i++;
   }
+
+  int j = 0;
+  do {
+    print(j);
+    i++;
+  } while (j < 0);
 }
