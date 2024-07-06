@@ -1,22 +1,21 @@
-void main() {
-  var intVariable = returnOne();
-  print(intVariable);
-  var TwoVariable = returnTwo();
-  print(TwoVariable);
-  var (number, string, boolean) = returnThree();
-  print(number);
-  print(string);
-  print(boolean);
+void main(){
+	Cookie cookie1 = Cookie();
+	cookie1.baking();
+	print(cookie1.is_cooling());
+	print(cookie1.shape);
+	cookie1.shape = "square";
+	print(cookie1.shape);
 }
 
-int returnOne() {
-  return 12;
-}
+class Cookie{
+	String shape = "circle";
+	double size = 15.2;
 
-(int, String) returnTwo() {
-  return (12, "!@");
-}
+	void baking(){
+		print("Baking has started");
+	}
 
-(int, String, bool) returnThree() {
-  return (12, "!@", false);
+	bool is_cooling(){
+		return false;
+	}
 }
