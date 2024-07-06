@@ -1,21 +1,8 @@
 void main() {
-  print("Hello World");
-  //this is a comment =)
-  print(43 + 34);
-  int age = 22;
-  print(age);
-  dynamic dynamicvalue = 10;
-  print(dynamicvalue);
-  dynamicvalue = "This is string";
-  print(dynamicvalue);
-  dynamicvalue = false;
-  print(dynamicvalue);
-  dynamicvalue = 10.25;
-  print(dynamicvalue);
-  String name = "Name";
-  String greeting = "Hello ";
-  print('${greeting}${name}');
-  var somevalue = 10;
-  print(somevalue);
-  print(DateTime.now());
+  int age = 20;
+  if (age >= 18) {
+    print("you're in legal age");
+  } else {
+    print("you're not in legal age");
+  }
 }
