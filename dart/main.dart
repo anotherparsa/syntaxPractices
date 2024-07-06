@@ -1,6 +1,5 @@
 void main(){
 	Cookie cookie1 = Cookie("Circle", 16.3);
-	cookie1.baking();
 	print(cookie1.is_cooling());
 	print(cookie1.shape);
 	cookie1.shape = "square";
@@ -17,6 +16,7 @@ class Cookie{
 		print("Constructor has been executed");
 		this.shape = shape;
 		this.size = size;
+		this.baking();
 	}
 
 	void baking(){
