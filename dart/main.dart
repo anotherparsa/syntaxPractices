@@ -1,5 +1,17 @@
 void main(){
-	print(addNumber(1,2, n3:3));
+	Car new_car = Car();
+	new_car.accelerate(29);
+	new_car.display_engine();
 }
 
-int addNumber(int n1, int n2, {int n3=0}) => n1 + n2 + n3  ;
+class Car{
+	String engine = "V6";
+
+	void accelerate(int acceleration){
+		print("accelerating ${acceleration} KM/H");
+	}
+
+	void display_engine(){
+		print("engine is ${this.engine}");
+	}
+}
