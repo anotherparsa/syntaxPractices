@@ -1,26 +1,31 @@
 void main(){
+	Vehicle new_vehicle = Vehicle();
+	new_vehicle.accelerate(20);
+	new_vehicle.get_speed();
+	new_vehicle.accelerate(30);
+	new_vehicle.get_speed();
+	new_vehicle.deccelerate(19);
+	new_vehicle.get_speed();
+
 	Car new_car = Car();
-	new_car.accelerate(20);
+	new_car.accelerate(50);
 	new_car.get_speed();
-	new_car.accelerate(30);
-	new_car.get_speed();
-	new_car.deccelerate(19);
-	new_car.get_speed();
+
 
 }
 
-class Car{
+class Vehicle{
 	int speed = 0;
 	bool is_running = false;
 
 	void accelerate(int acceleration){
 		this.speed += acceleration;
-		print("Car is accelerating");
+		print("Vehicle is accelerating");
 		this.is_running = true;
 	}
 
 	void get_speed(){
-		print("Car's speed is ${this.speed}");
+		print("Vehicle's speed is ${this.speed}");
 	}
 
 	void deccelerate(int decceleration){
@@ -28,13 +33,11 @@ class Car{
 			print("You can't decelerate that much");
 		}else{
 			this.speed -= decceleration;
-			print("Car is deccelerating");
+			print("Vehicle is deccelerating");
 			if (this.speed == 0){
 				this.is_running = false;
 			}
 		}
-
-
 	}
 
 	void check_is_running(){
@@ -44,4 +47,8 @@ class Car{
 			print("It's not running");
 		}
 	}
+}
+
+class Car extends Vehicle{
+	
 }
