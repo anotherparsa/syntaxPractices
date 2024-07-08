@@ -1,37 +1,47 @@
 void main(){
-	Car new_car = Car("V6", 200, 45000);
-	new_car.display_top_speed();
-	new_car.display_engine_type();
-	new_car.display_price();
+	Car new_car = Car();
+	new_car.accelerate(20);
+	new_car.get_speed();
+	new_car.accelerate(30);
+	new_car.get_speed();
+	new_car.deccelerate(19);
+	new_car.get_speed();
 
 }
 
 class Car{
-	String? engine_type;
-	int? top_speed;
-	int? price;
-
-
-	Car(String engine_type, int top_speed, int price){
-		print("A car has been made");
-		this.engine_type = engine_type;
-		this.top_speed = top_speed;
-		this.price = price;
-	}
+	int speed = 0;
+	bool is_running = false;
 
 	void accelerate(int acceleration){
-		print("accelerating ${acceleration} KM/H");
+		this.speed += acceleration;
+		print("Car is accelerating");
+		this.is_running = true;
 	}
 
-	void display_engine_type(){
-		print("engine is ${this.engine_type}");
+	void get_speed(){
+		print("Car's speed is ${this.speed}");
 	}
 
-	void display_price(){
-		print("Price is ${this.price}");
+	void deccelerate(int decceleration){
+		if (this.speed - decceleration < 0){
+			print("You can't decelerate that much");
+		}else{
+			this.speed -= decceleration;
+			print("Car is deccelerating");
+			if (this.speed == 0){
+				this.is_running = false;
+			}
+		}
+
+
 	}
 
-	void display_top_speed(){
-		print("Top speed is ${this.top_speed}");
+	void check_is_running(){
+		if (this.is_running){
+			print("It's is running");
+		}else{
+			print("It's not running");
+		}
 	}
 }
