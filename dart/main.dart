@@ -10,6 +10,8 @@ void main(){
 	Car new_car = Car();
 	new_car.accelerate(50);
 	new_car.get_speed();
+	new_car.number_of_wheel = 5;
+	print(new_car.number_of_wheel);
 
 
 }
@@ -50,5 +52,5 @@ class Vehicle{
 }
 
 class Car extends Vehicle{
-	
+	int? number_of_wheel;
 }
