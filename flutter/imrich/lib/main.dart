@@ -4,11 +4,20 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text("I'm Rich"),
+        title: Text(
+          "I'm Rich",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black,
+        centerTitle: true,
       ),
       body: Center(
-        child: Text("Hello world"),
+        child: Text(
+          "I'm Rich",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
+      backgroundColor: Colors.black,
     ),
   ));
 }
