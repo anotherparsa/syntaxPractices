@@ -12,6 +12,8 @@ void main(){
 	new_car.get_speed();
 	new_car.number_of_wheel = 5;
 	print(new_car.number_of_wheel);
+	new_car.number_of_wheel = 10;
+	print(new_car.number_of_wheel);
 
 
 }
