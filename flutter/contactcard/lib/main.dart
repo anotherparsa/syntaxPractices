@@ -26,9 +26,17 @@ void main() {
                     "Test 1",
                     style: TextStyle(color: Colors.white),
                   ),
+                  Icon(
+                    Icons.phone,
+                    color: Colors.white,
+                  ),
                   Text(
                     "Test 2",
                     style: TextStyle(color: Colors.white),
+                  ),
+                  Icon(
+                    Icons.email,
+                    color: Colors.white,
                   )
                 ],
               ),
