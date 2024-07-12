@@ -11,18 +11,38 @@ void main() {
               CircleAvatar(
                 radius: 50.0,
                 backgroundColor: Colors.white,
-
+              ),
+              Text(
+                "Your Name",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+              Text(
+                "Your Occupation",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Test 1",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text(
+                    "Test 2",
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
               ),
             ],
           ),
         ),
-
         appBar: AppBar(
-          title: Text("Contact Card"),
-          backgroundColor: Colors.white,
+          title: Text(
+            "Contact Card",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.black,
           centerTitle: true,
         ),
-
         backgroundColor: Colors.black,
       ),
     ),
