@@ -1,58 +1,99 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              CircleAvatar(
-                radius: 50.0,
-                backgroundColor: Colors.white,
-              ),
-              Text(
-                "Your Name",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-              Text(
-                "Your Occupation",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Test 1",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Test 2",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.email,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ],
-          ),
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Contact Card",
+          style: TextStyle(color: Colors.white),
         ),
-        appBar: AppBar(
-          title: Text(
-            "Contact Card",
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.black,
-          centerTitle: true,
-        ),
+        centerTitle: true,
         backgroundColor: Colors.black,
       ),
+      body: Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 50.0,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "Your name",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "Your occupation",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Container(
+                margin: EdgeInsets.only(left: 30, right: 30),
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 10, bottom: 10, left: 40),
+                      child: Icon(
+                        Icons.phone,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10, left: 20, right: 20),
+                      child: Text(
+                        "0123456789",
+                        style: TextStyle(color: Colors.black, fontSize: 40),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Container(
+                margin: EdgeInsets.only(left: 30, right: 30),
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 10, bottom: 10, left: 40),
+                      child: Icon(
+                        Icons.email,
+                        size: 40,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 10, left: 20, right: 20),
+                      child: Text(
+                        "test@gmail.com",
+                        style: TextStyle(color: Colors.black, fontSize: 40),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      backgroundColor: Colors.black,
     ),
-  );
+  ));
 }
