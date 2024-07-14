@@ -21,11 +21,16 @@ void main() {
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
             TextField(
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
-                  hintText: "Please enter the amount in IRR",
-                  hintStyle: TextStyle(color: Colors.white)),
-            ),
+                hintText: "Please enter the amount in IRR",
+                hintStyle: TextStyle(color: Colors.black),
+                filled: true,
+                fillColor: Colors.white,
+                prefixIcon: Icon(Icons.monetization_on ),
+                prefixIconColor: Colors.black,
+              ),
+            )
           ],
         ),
       ),
