@@ -27,8 +27,11 @@ void main() {
                 hintStyle: TextStyle(color: Colors.black),
                 filled: true,
                 fillColor: Colors.white,
-                prefixIcon: Icon(Icons.monetization_on ),
+                prefixIcon: Icon(Icons.monetization_on),
                 prefixIconColor: Colors.black,
+              ),
+              keyboardType: TextInputType.numberWithOptions(
+                decimal: true,
               ),
             )
           ],
