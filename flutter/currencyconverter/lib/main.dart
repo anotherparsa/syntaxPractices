@@ -13,18 +13,24 @@ void main() {
         centerTitle: true,
       ),
       body: Center(
-          child: ColoredBox(
-        color: Colors.blue,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Test",
+              "0",
               style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
+            TextField(
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                  label: Text(
+                "Please enter the amount in IRR",
+                style: TextStyle(color: Colors.white),
+              )),
             ),
           ],
         ),
-      )),
+      ),
       backgroundColor: Colors.black,
     ),
   ));
