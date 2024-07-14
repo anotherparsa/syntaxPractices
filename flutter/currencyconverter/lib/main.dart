@@ -22,11 +22,8 @@ void main() {
             ),
             TextField(
               style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  label: Text(
-                "Please enter the amount in IRR",
-                style: TextStyle(color: Colors.white),
-              )),
+              decoration:
+                  InputDecoration(helperText: "Please enter the amount in IRR"),
             ),
           ],
         ),
