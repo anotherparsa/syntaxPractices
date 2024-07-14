@@ -13,12 +13,18 @@ void main() {
         centerTitle: true,
       ),
       body: Center(
+          child: ColoredBox(
+        color: Colors.blue,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Test", style: TextStyle(color: Colors.white, fontSize: 30),),
+            Text(
+              "Test",
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
           ],
         ),
-      ),
+      )),
       backgroundColor: Colors.black,
     ),
   ));
