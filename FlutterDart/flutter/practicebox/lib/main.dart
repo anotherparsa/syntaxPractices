@@ -9,18 +9,13 @@ void main() {
         title: Text("Practice Box"),
         backgroundColor: Colors.blue,
       ),
-      body: Container(
-        width: double.infinity,
-        height: 150,
-        margin: EdgeInsets.all(30),
-        padding: EdgeInsets.all(40),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.red)
-        ),
-        child: Text(
-          "This text is inside a container",
-          style: TextStyle(fontSize:25),
-        ),
+      body:  Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Text 1", style: TextStyle(color: Colors.blue, fontSize: 50),),
+          Text("Text 2", style: TextStyle(color: Colors.red, fontSize: 50),),
+          Text("Text 3", style: TextStyle(color: Colors.green, fontSize: 50),)
+        ],
       ),
       backgroundColor: Colors.white,
     ),
