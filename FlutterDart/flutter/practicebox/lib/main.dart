@@ -13,6 +13,7 @@ void main() {
         width: double.infinity,
         height: 150,
         margin: EdgeInsets.all(30),
+        padding: EdgeInsets.all(40),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.red)
         ),
