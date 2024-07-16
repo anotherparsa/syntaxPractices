@@ -10,10 +10,12 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        color: Colors.green,
         width: double.infinity,
         height: 150,
         margin: EdgeInsets.all(30),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.red)
+        ),
         child: Text(
           "This text is inside a container",
           style: TextStyle(fontSize:25),
