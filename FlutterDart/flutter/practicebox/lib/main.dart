@@ -10,19 +10,7 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 20, left: 200),
-              child: Text("This is a text 1"),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 20, left: 200),
-              child: Text("This is a text 2", textAlign: TextAlign.left,),
-            ),
-          ],
-        ),
+        child: Text("This text is inside a container"),
       ),
       backgroundColor: Colors.white,
     ),
