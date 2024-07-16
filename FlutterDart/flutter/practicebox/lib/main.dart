@@ -10,7 +10,10 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        child: Text("This text is inside a container"),
+        child: Text(
+          "This text is inside a container",
+          style: TextStyle(fontSize: 50),
+        ),
       ),
       backgroundColor: Colors.white,
     ),
