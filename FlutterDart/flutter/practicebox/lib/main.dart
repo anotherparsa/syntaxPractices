@@ -13,6 +13,7 @@ void main() {
         color: Colors.green,
         width: double.infinity,
         height: 150,
+        margin: EdgeInsets.all(30),
         child: Text(
           "This text is inside a container",
           style: TextStyle(fontSize:25),
