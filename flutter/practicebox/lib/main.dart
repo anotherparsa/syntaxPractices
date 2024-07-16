@@ -19,7 +19,7 @@ void main() {
             ),
             Padding(
               padding: EdgeInsets.only(top: 20, left: 200),
-              child: Text("This is a text 2"),
+              child: Text("This is a text 2", textAlign: TextAlign.left,),
             ),
           ],
         ),
