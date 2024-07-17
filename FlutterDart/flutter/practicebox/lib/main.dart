@@ -11,7 +11,7 @@ void main() {
       ),
       body: Container(
         child: Align(
-          alignment: Alignment.bottomLeft,
+          alignment: Alignment.bottomCenter,
           child: Text("Test Text", style: TextStyle(fontSize: 25),
         )),
       ),
