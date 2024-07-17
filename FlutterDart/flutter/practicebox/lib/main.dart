@@ -9,11 +9,11 @@ void main() {
         title: Text("Practice Box"),
         backgroundColor: Colors.blue,
       ),
-      body: Container(
-        child: Align(
-          alignment: Alignment(1.0, 0.0),
-          child: Text("Test Text", style: TextStyle(fontSize: 25),
-        )),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text("Press Me"),
+        ),
       ),
       backgroundColor: Colors.white,
     ),
