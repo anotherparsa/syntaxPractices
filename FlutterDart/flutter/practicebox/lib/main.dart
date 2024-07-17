@@ -10,7 +10,8 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        child: Center(
+        child: Align(
+          alignment: Alignment.bottomLeft,
           child: Text("Test Text", style: TextStyle(fontSize: 25),
         )),
       ),
