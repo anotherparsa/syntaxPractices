@@ -9,14 +9,8 @@ void main() {
         title: Text("Practice Box"),
         backgroundColor: Colors.blue,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Text 1", style: TextStyle(color: Colors.blue, fontSize: 50),),
-          Text("Text 2", style: TextStyle(color: Colors.red, fontSize: 50),),
-          Text("Text 3", style: TextStyle(color: Colors.green, fontSize: 50),),
-          FlutterLogo(size: 250,)
-        ],
+      body: Container(
+        child: Text("Test Text", style: TextStyle(fontSize: 25),),
       ),
       backgroundColor: Colors.white,
     ),
