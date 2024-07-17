@@ -10,7 +10,9 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
-        child: Text("Test Text", style: TextStyle(fontSize: 25),),
+        child: Center(
+          child: Text("Test Text", style: TextStyle(fontSize: 25),
+        )),
       ),
       backgroundColor: Colors.white,
     ),
