@@ -10,11 +10,45 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text("Press Me"),
-        ),
-      ),
+          child: Column(
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("Press Me"),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          FilledButton(
+            onPressed: () {},
+            child: Text("Press Me"),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          FilledButton.tonal(
+            onPressed: () {},
+            child: Text("Press Me"),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text("Press Me"),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("Press Me"),
+          )
+        ],
+      )),
       backgroundColor: Colors.white,
     ),
   ));
