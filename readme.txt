@@ -1,3 +1,3 @@
-practicing languages syntax
+just practicing syntax
 these files are just for practicing and keeping the track for myself 
 and have absolutely no other value =) 
