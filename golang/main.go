@@ -23,4 +23,22 @@ func main() {
 		}
 	}
 
+	day_of_week := 6
+	switch day_of_week {
+	case 1:
+		fmt.Println("Today is Saturday")
+	case 2:
+		fmt.Println("Today is Sunday")
+	case 3:
+		fmt.Println("Today is Monday")
+	case 4:
+		fmt.Println("Today is Tuesday")
+	case 5:
+		fmt.Println("Today is Wednesday")
+	case 6:
+		fmt.Println("Today is Friday")
+	default:
+		fmt.Println("Today number is invalid")
+	}
+
 }
