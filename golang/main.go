@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import(
+	"fmt"
+	"test/greeting"
+)
 
 func main() {
 
@@ -11,4 +14,5 @@ func main() {
 	fmt.Println(age_1)
 	fmt.Println("Hello World")
 	fmt.Printf("name is %v and age is %v \n", name, age)
+	fmt.Println(greeting.Text)
 }
