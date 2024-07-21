@@ -24,4 +24,8 @@ func main() {
 	delete(initializedmap, 6)
 	fmt.Println(initializedmap)
 
+	for key, _ := range initializedmap {
+		fmt.Println(initializedmap[key])
+	}
+
 }
