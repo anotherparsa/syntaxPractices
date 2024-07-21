@@ -41,4 +41,8 @@ func main() {
 		fmt.Println("Today number is invalid")
 	}
 
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
 }
