@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
@@ -12,9 +15,11 @@ func main() {
 	fmt.Println(makeslice)
 	makeslice[0] = 0
 	makeslice[1] = 1
-	makeslice[2] = 2
+	makeslice[2] = 33
 	makeslice[3] = 3
-	makeslice = append(makeslice, 4, 5, 6)
+	makeslice = append(makeslice, 11, 10, 8)
+	fmt.Println(makeslice)
+	sort.Ints(makeslice)
 	fmt.Println(makeslice)
 
 }
