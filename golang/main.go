@@ -42,14 +42,13 @@ func main() {
 	}
 
 	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-	}
-
-	i := 0
-
-	for i < 5 {
-		fmt.Println(i)
-		i++
+		if i == 5 {
+			continue
+		} else if i == 9 {
+			break
+		} else {
+			fmt.Println(i)
+		}
 	}
 
 }
