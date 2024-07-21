@@ -1,16 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 
-	twodimentionalarray := [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 3; j++ {
-			fmt.Println(twodimentionalarray[i][j])
-		}
-	}
+	var slice1 = []string{"E1", "E2", "E3", "E4"}
+	fmt.Println(slice1[0])
+	slice2 := []int{1, 2, 3, 4, 5, 6}
+	fmt.Println(slice2[3])
 
 }
