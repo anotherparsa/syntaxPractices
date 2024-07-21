@@ -13,12 +13,16 @@ func main() {
 
 	//	numbers := [4]int{1, 2, 3, 4}
 
-	for i := 0; i < len(names); i++ {
-		fmt.Println(names[i])
-	}
-
-	for index, value := range names {
-		fmt.Printf("The index is %v and the value is %v \n", index, value)
-	}
+	names2 := names
+	names3 := &names
+	fmt.Println(names[0])
+	fmt.Println(names2[0])
+	fmt.Println(names3[0])
+	names2[0] = "Changed"
+	fmt.Println(names2[0])
+	fmt.Println(names[0])
+	names3[0] = "changed"
+	fmt.Println(names3[0])
+	fmt.Println(names[0])
 
 }
