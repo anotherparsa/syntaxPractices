@@ -45,4 +45,8 @@ func main() {
 		fmt.Println(i)
 	}
 
+	for {
+		fmt.Println("go")
+	}
+
 }
