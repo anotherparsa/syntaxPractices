@@ -11,4 +11,15 @@ func main() {
 	emptyMap[2] = "Two"
 	fmt.Println(emptyMap[1])
 
+	initializedmap := map[int]string{1: "One", 2: "Two", 3: "Three", 4: "Four"}
+
+	fmt.Println(initializedmap)
+	//updating
+	initializedmap[4] = "Chahar"
+	fmt.Println(initializedmap)
+	//adding
+	initializedmap[5] = "Five"
+
+	fmt.Println(initializedmap)
+
 }
