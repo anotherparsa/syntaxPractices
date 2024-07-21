@@ -11,6 +11,8 @@ func main() {
 	names[1] = "Name 2"
 	names[2] = "Name 3"
 	fmt.Println(names[1])
-	
+
+	numbers := [4]int{1, 2, 3, 4}
+	fmt.Println(numbers[0])
 
 }
