@@ -45,8 +45,11 @@ func main() {
 		fmt.Println(i)
 	}
 
-	for {
-		fmt.Println("go")
+	i := 0
+
+	for i < 5 {
+		fmt.Println(i)
+		i++
 	}
 
 }
