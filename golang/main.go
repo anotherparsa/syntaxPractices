@@ -19,7 +19,9 @@ func main() {
 	fmt.Println(initializedmap)
 	//adding
 	initializedmap[5] = "Five"
-
+	initializedmap[6] = "Six"
+	fmt.Println(initializedmap)
+	delete(initializedmap, 6)
 	fmt.Println(initializedmap)
 
 }
