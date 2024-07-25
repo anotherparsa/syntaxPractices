@@ -16,8 +16,13 @@ h4 {
 
 #second-h1-tag{
     color: red;
+    background-color: black;
 }
 
 .third-h1-tag-class{
     color: pink;
+}
+
+p, .p-class{
+    color: aqua;
 }
