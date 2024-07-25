@@ -5,13 +5,21 @@ import (
 )
 
 func main() {
-	sum, avg := multiplereturn(2, 10)
-	fmt.Printf("This is sum %v and this is average %v \n", sum, avg)
+	a := 0
+	b := 0
+	fmt.Println(a)
+	fmt.Println(b)
+	passedByValue(a)
+	passedByReference(&b)
+	fmt.Println(a)
+	fmt.Println(b)
+
 }
 
-func multiplereturn(a int, b int) (int, int) {
-	sum := a + b
-	avg := sum / 2
+func passedByValue(a int) {
+	a = 10
+}
 
-	return sum, avg
+func passedByReference(b *int) {
+	*b = 10
 }
