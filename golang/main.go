@@ -5,21 +5,14 @@ import (
 )
 
 func main() {
-	a := 0
-	b := 0
-	fmt.Println(a)
-	fmt.Println(b)
-	passedByValue(a)
-	passedByReference(&b)
-	fmt.Println(a)
-	fmt.Println(b)
 
-}
+	simpleint := 10
+	simplestring := "Hello"
+	var intpointer *int = &simpleint
+	var stringpointer *string = &simplestring
+	fmt.Println(intpointer)
+	fmt.Println(stringpointer)
+	fmt.Println(*intpointer)
+	fmt.Println(*stringpointer)
 
-func passedByValue(a int) {
-	a = 10
-}
-
-func passedByReference(b *int) {
-	*b = 10
 }
