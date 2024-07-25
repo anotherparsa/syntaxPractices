@@ -2,17 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
-	greeting("Alex")
-	fmt.Println(mtultiple(2, 3))
-}
-
-func greeting(name string) {
-	fmt.Printf("Hello %v \n", name)
-}
-
-func mtultiple(a int, b int) int {
-	return a * b
+	square := func(x float64) float64 {
+		return math.Sqrt(x)
+	}
+	//why?
+	fmt.Println(square(9))
 }
