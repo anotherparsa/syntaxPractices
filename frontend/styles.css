@@ -26,3 +26,7 @@ h4 {
 p, .p-class{
     color: aqua;
 }
+
+.p-class p{
+    color: chocolate;
+}
