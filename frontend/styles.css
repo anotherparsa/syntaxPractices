@@ -1,35 +1,19 @@
-h1 {
-    color: blue;
+.box1{
+    border: 3px red solid;
 }
 
-h2 {
-    color: red;
+.box2{
+    border: 3px blue solid;
 }
 
-h3 {
-    color: green;
+.box1up{
+    border: 3px purple solid;
+    margin: 15px;
+    padding: 20;
 }
 
-h4 {
-    color: purple;
-}
-
-#second-h1-tag{
-    color: red;
-    background-color: black;
-    border: 3px solid red;
-}
-
-.third-h1-tag-class{
-    color: pink;
-}
-
-p, .p-class{
-    color: aqua;
-    border: 3px dotted blue;
-}
-
-.p-class p{
-    color: chocolate;
-    border: 3px groove rgb(247, 15, 185);
+.box1down{
+    border: 3px purple solid;
+    margin: 30px;
+    padding: 10;
 }
