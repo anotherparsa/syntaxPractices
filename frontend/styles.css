@@ -4,3 +4,24 @@
     box-sizing: border-box;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #020a46;
+}
+
+.form-container{
+    max-width: 90%;
+
+}
+
+.login-form{
+    display: flex;
+}
