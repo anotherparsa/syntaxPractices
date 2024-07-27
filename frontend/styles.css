@@ -16,3 +16,12 @@
     height: 50px;
     overflow: hidden;
 }
+
+.box3{
+    width: 50%;
+
+}
+
+.box3 p{
+    width: 50%;
+}
