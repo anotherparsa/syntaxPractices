@@ -1,65 +1,71 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;   
+}
+
+body{
+    background-color: #d9e2e8;
 }
 
 .container{
-    width: 400px;
+    max-width: 600px;
     margin: 100px auto;
-
+    padding: 0 20px;
 }
 
 .card{
-    background-color: #373f4d;
-    color: #ffffff;
-    border-radius: 5px;
-    text-align: center;
-    padding: 60px 50px;
-
-}
-
-.card .form-group{
-    margin-bottom: 20px;
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .card h1{
-    font-size: 22px;
-    margin-bottom: 15px;
-    
+    font-size: 23px;
+    margin-bottom: 30px;
 }
 
 .card p{
-    font-size: 15px;
+    font-size: 18px;
+    color: #333;
     margin-bottom: 30px;
-    
 }
 
-#submit-button{
-    display: block;
-    width: 100%;
-    padding: 15px 10px;
-    font-size: large;
-    background : linear-gradient(
-        90deg,
-        rgba(242,132,62,1) 21%,
-        rgba(239, 111, 69, 1) 61%
-    );
-    color: #ffffff;
-    
+.card-sporty h1{
+    color: #e04553;
 }
 
-#submit-button:hover{
-    background : linear-gradient(
-        90deg,
-        rgba(232,132,62,1) 21%,
-        rgba(229, 111, 69, 1) 61%
-    );
+.card-casual h1{
+    color: #0d4ba3;
 }
 
-#text{
-    width: 100%;
-    padding: 15px 10px;
-    font-size: large;
+.card-formal h1{
+    color: #512b22;
+}
 
+.card a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.card a:hover {
+    opacity: 0.8;
+}
+
+.card-sporty a{
+    background-color: #e04553;
+}
+
+.card-casual a{
+    background-color: #0d4ba3;
+}
+
+.card-formal a{
+    background-color: #512b22;
 }
