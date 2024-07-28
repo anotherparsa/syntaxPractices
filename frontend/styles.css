@@ -1,45 +1,65 @@
-.box{
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px red solid;
-    margin: 10px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.box1{
-    position: static;
-    top: 30px;
+.container{
+    width: 400px;
+    margin: 100px auto;
+
 }
 
-.box2{
-    position: relative;
-    left: 30px;
-    top: 20px;
+.card{
+    background-color: #373f4d;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 60px 50px;
+
 }
 
-.box3{
-    position: fixed;
-    top: 0;
-    right: 0;
+.card .form-group{
+    margin-bottom: 20px;
 }
 
-.box4{
-    position: sticky;
-    top: 200px;
+.card h1{
+    font-size: 22px;
+    margin-bottom: 15px;
+    
 }
 
-.box5{
-    position: relative;
-    width: 500;
-    height: 500;
+.card p{
+    font-size: 15px;
+    margin-bottom: 30px;
+    
 }
 
-.box6{
-    position: absolute;
-    top: 0;
-    right: 0;
+#submit-button{
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: large;
+    background : linear-gradient(
+        90deg,
+        rgba(242,132,62,1) 21%,
+        rgba(239, 111, 69, 1) 61%
+    );
+    color: #ffffff;
+    
+}
+
+#submit-button:hover{
+    background : linear-gradient(
+        90deg,
+        rgba(232,132,62,1) 21%,
+        rgba(229, 111, 69, 1) 61%
+    );
+}
+
+#text{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: large;
 
 }
