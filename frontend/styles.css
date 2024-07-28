@@ -1,71 +1,48 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 body{
-    background-color: #d9e2e8;
+    background-color: #f2f2f2;
 }
 
 .container{
+    background-color: white;
     max-width: 600px;
     margin: 100px auto;
-    padding: 0 20px;
-}
-
-.card{
-    background-color: white;
-    margin: 20px 0;
-    padding: 20px 20px;
+    padding: 20px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.card h1{
-    font-size: 23px;
-    margin-bottom: 30px;
+h1{
+    margin-top: 0px;
+    text-align: center;
 }
 
-.card p{
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+button{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 10 0;
+    width: 100%;
     font-size: 18px;
-    color: #333;
-    margin-bottom: 30px;
+    transition: background-color .2s;
+
 }
 
-.card-sporty h1{
-    color: #e04553;
-}
-
-.card-casual h1{
-    color: #0d4ba3;
-}
-
-.card-formal h1{
-    color: #512b22;
-}
-
-.card a{
-    text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.card a:hover {
-    opacity: 0.8;
-}
-
-.card-sporty a{
-    background-color: #e04553;
-}
-
-.card-casual a{
-    background-color: #0d4ba3;
-}
-
-.card-formal a{
-    background-color: #512b22;
+button:hover{
+    background-color: #45a049;
 }
