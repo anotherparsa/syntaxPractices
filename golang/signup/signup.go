@@ -1,13 +1,12 @@
 package signup
 
 import (
-	"html/template"
 	"net/http"
 	"os"
+	"test/tools"
 )
 
 func SignupPageHandler(w http.ResponseWriter, r *http.Request) {
 	dir, _ := os.Getwd()
-	t, _ := template.ParseFiles(dir + "/signup/signup.html")
-	t.Execute(w, nil)
+	tools.RenderTemplates(w, dir+"/signup/signup.html", nil)
 }

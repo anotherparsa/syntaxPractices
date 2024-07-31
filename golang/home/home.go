@@ -2,9 +2,9 @@ package home
 
 import (
 	"fmt"
-	"html/template"
 	"net/http"
 	"os"
+	"test/tools"
 )
 
 type datatosend struct {
@@ -17,11 +17,10 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Please go back to sign up page and try again")
 	} else {
 		dir, _ := os.Getwd()
-		t, _ := template.ParseFiles(dir + "/home/home.html")
 		r.ParseForm()
 		username := r.Form.Get("username")
 		password := r.Form.Get("password")
 		d := datatosend{D1: username, D2: password}
-		t.Execute(w, d)
+		tools.RenderTemplates(w, dir+"/home/home.html", d)
 	}
 }
