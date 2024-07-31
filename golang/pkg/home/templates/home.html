@@ -1,10 +1,15 @@
-<html>
-    <head>
-        <title>Signup</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-            <h1> The user name is {{.D1}}</h1>
-            <h1> The password is {{.D2}}</h2>
-    </body>
-</html>
+{{template "base" .}}
+
+{{define "headpart"}}
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles.css">
+{{end}}
+
+
+{{define "content"}}
+    <h1> The user name is {{.D1}}</h1>
+    <h1> The password is {{.D2}}</h2>
+    <h1> just testing </h1>
+{{end}}
+
+

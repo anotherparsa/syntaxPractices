@@ -1,17 +1,20 @@
-<html>
-    <head>
-        <title>Signup</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <form action="/home" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <br>
-            <button type="submit">Submit form</button>
-        </form>
-    </body>
-</html>
+{{template "base" .}}
+
+{{define "headpart"}}
+<title>Signup</title>
+<link rel="stylesheet" href="styles.css">
+{{end}}
+
+{{define "content"}}
+    <form action="/home" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit">Submit form</button>
+        <br>
+        <h1>just testing </h1>
+</form>
+{{end}}
