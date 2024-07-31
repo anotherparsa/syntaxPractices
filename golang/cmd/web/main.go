@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"test/router"
+	"test/pkg/router"
 )
 
 func main() {

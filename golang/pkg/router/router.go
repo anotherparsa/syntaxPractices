@@ -3,10 +3,10 @@ package router
 import (
 	"fmt"
 	"net/http"
-	"test/about"
-	"test/home"
-	"test/product"
-	"test/signup"
+	"test/pkg/about"
+	"test/pkg/home"
+	"test/pkg/product"
+	"test/pkg/signup"
 )
 
 func RoutingHandler(w http.ResponseWriter, r *http.Request) {
