@@ -7,6 +7,7 @@ import (
 	"test/pkg/home"
 	"test/pkg/product"
 	"test/pkg/signup"
+	"test/pkg/tools"
 )
 
 func RoutingHandler(w http.ResponseWriter, r *http.Request) {
@@ -19,6 +20,8 @@ func RoutingHandler(w http.ResponseWriter, r *http.Request) {
 		home.HomePageHandler(w, r)
 	case "/signup":
 		signup.SignupPageHandler(w, r)
+	case "/tools":
+		tools.GenerateCSRFTPageHandler(w, r)
 	default:
 		fmt.Fprintf(w, "Page not found")
 	}

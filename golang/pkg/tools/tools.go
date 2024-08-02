@@ -4,7 +4,13 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"crypto/rand"
+	"encoding/base64"
 )
+
+type datatosend struct {
+	D1 string
+}
 
 /*func RenderTemplates(w http.ResponseWriter, templateAddress string, data any) {
 	parsedTemplate, err := template.ParseFiles(templateAddress, "../../pkg/baseTemplate/baseTemplate.html")
@@ -58,4 +64,13 @@ func createTemplateCache(templateAddress string) error {
 		return nil
 	}
 
+}
+
+func GenerateCSRFTPageHandler(w http.ResponseWriter, r *http.Request) {
+	d := datatosend{D1: GenerateCSRFT()}
+	RenderTemplates(w, "../../pkg/tools/templates/tools.html", d)
+}
+
+func GenerateCSRFT() string {
+	return "test"
 }
