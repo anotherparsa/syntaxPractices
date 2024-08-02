@@ -18,7 +18,7 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		fmt.Fprintf(w, "Please go back to sign up page and try again")
 	} else {
-		real_csrf := signup.Get_generated_csrf_token()
+		real_csrf := signup.Csrf_token
 		r.ParseForm()
 		username := r.Form.Get("username")
 		password := r.Form.Get("password")
