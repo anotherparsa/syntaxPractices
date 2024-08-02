@@ -1,11 +1,11 @@
 package tools
 
 import (
+	"crypto/rand"
+	"encoding/base64"
 	"fmt"
 	"html/template"
 	"net/http"
-	"crypto/rand"
-	"encoding/base64"
 )
 
 type datatosend struct {
@@ -72,5 +72,10 @@ func GenerateCSRFTPageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func GenerateCSRFT() string {
-	return "test"
+	bytesSlices := make([]byte, 32)
+	_, err := rand.Read(bytesSlices)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return base64.StdEncoding.EncodeToString(bytesSlices)
 }
