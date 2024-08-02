@@ -1,8 +1,9 @@
+
 {{template "base" .}}
 
 {{define "headpart"}}
     <title>Signup</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 {{end}}
 
 
@@ -12,6 +13,7 @@
     <h1> The real csrf is {{.D3}}</h1>
     <h1> The sent csrf is {{.D4}}</h2>
     <h1> it's valid </h1>
+    <img src="/static/this.png">
 {{end}}
 
 

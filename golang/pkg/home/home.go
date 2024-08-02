@@ -33,3 +33,9 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 
 	}
 }
+
+
+func SetupFileserver() {
+    fileserver := http.FileServer(http.Dir("../../pkg/home/static/"))
+    http.Handle("/static/", http.StripPrefix("/static/", fileserver))
+}
