@@ -80,19 +80,35 @@ func GenerateCSRFT() string {
 	return base64.StdEncoding.EncodeToString(bytesSlices)
 }
 
+func GenerateUUID() string {
+	byteSlices := make([]byte, 32)
+	_, err := rand.Read(byteSlices)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return base64.StdEncoding.EncodeToString(byteSlices)
+}
+
 func SetCookie(w http.ResponseWriter, r *http.Request) {
-	http.SetCookie(w, &http.Cookie{Name: "my-cookie-test", Value: "SomeValue-test"})
-	fmt.Fprintf(w, "Cookie has been set to your browser")
+	uuid := GenerateUUID()
+	_, err := r.Cookie("session")
+	if err != nil {
+		http.SetCookie(w, &http.Cookie{Name: "session", Value: uuid})
+		fmt.Fprintf(w, "Cookie has been set to your browser")
+	} else {
+		fmt.Fprintf(w, "You already has a session cookie")
+	}
+
 }
 
 func ReadCookie(w http.ResponseWriter, r *http.Request) {
-	cookie, _ := r.Cookie("my-cookie-test")
+	cookie, _ := r.Cookie("session")
 	fmt.Fprintf(w, "Your cooki is %v", cookie)
 
 }
 
 func ExpireCookie(w http.ResponseWriter, r *http.Request) {
-	cookie, _ := r.Cookie("my-cookie-test")
+	cookie, _ := r.Cookie("session")
 	cookie.MaxAge = -1
 	http.SetCookie(w, cookie)
 	fmt.Fprintf(w, "The cookie has been expired")
