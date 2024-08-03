@@ -90,3 +90,10 @@ func ReadCookie(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Your cooki is %v", cookie)
 
 }
+
+func ExpireCookie(w http.ResponseWriter, r *http.Request) {
+	cookie, _ := r.Cookie("my-cookie-test")
+	cookie.MaxAge = -1
+	http.SetCookie(w, cookie)
+	fmt.Fprintf(w, "The cookie has been expired")
+}

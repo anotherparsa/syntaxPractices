@@ -26,6 +26,8 @@ func RoutingHandler(w http.ResponseWriter, r *http.Request) {
 		tools.SetCookie(w, r)
 	case "/readcookie":
 		tools.ReadCookie(w, r)
+	case "/expirecookie":
+		tools.ExpireCookie(w, r)
 	default:
 		fmt.Fprintf(w, "Page not found")
 	}
