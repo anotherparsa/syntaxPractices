@@ -1,10 +1,10 @@
 package home
 
 import (
-	"fmt"
 	"net/http"
 	"test/pkg/signup"
 	"test/pkg/tools"
+	"time"
 )
 
 type datatosend struct {
@@ -16,7 +16,8 @@ type datatosend struct {
 
 func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		fmt.Fprintf(w, "Please go back to sign up page and try again")
+		time.Sleep(time.Second * 5)
+		http.Redirect(w, r, "/signup", http.StatusSeeOther)
 	} else {
 		real_csrf := signup.Csrf_token
 		r.ParseForm()
@@ -34,8 +35,7 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
 func SetupFileserver() {
-    fileserver := http.FileServer(http.Dir("../../pkg/home/static/"))
-    http.Handle("/static/", http.StripPrefix("/static/", fileserver))
+	fileserver := http.FileServer(http.Dir("../../pkg/home/static/"))
+	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 }
