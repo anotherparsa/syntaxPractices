@@ -24,6 +24,8 @@ func RoutingHandler(w http.ResponseWriter, r *http.Request) {
 		tools.GenerateCSRFTPageHandler(w, r)
 	case "/setcookie":
 		tools.SetCookie(w, r)
+	case "/readcookie":
+		tools.ReadCookie(w, r)
 	default:
 		fmt.Fprintf(w, "Page not found")
 	}
