@@ -80,4 +80,7 @@ func GenerateCSRFT() string {
 	return base64.StdEncoding.EncodeToString(bytesSlices)
 }
 
-
+func SetCookie(w http.ResponseWriter, r *http.Request){
+	http.SetCookie(w, &http.Cookie{Name: "my-cookie", Value: "SomeValue"})
+	fmt.Fprintf(w, "Cookie has been set to your browser")
+}
