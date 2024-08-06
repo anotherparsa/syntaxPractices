@@ -1,6 +1,8 @@
 package home
 
 import (
+	"crypto"
+	"encoding/hex"
 	"fmt"
 	"net/http"
 	"test/pkg/signup"
@@ -28,12 +30,16 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 		firsname := r.Form.Get("firstname")
 		lastname := r.Form.Get("lastname")
 		password := r.Form.Get("password")
+		hash := crypto.SHA256.New()
+		hash.Write([]byte(password))
+		hashed_byte := hash.Sum(nil)
+		hashedPassword := hex.EncodeToString(hashed_byte)
 		sent_csrf_token := r.Form.Get("csrf-token")
 		if real_csrf != sent_csrf_token {
 			d := datatosend{D3: real_csrf, D4: sent_csrf_token}
 			tools.RenderTemplates(w, "../../pkg/home/templates/failedHome.html", d)
 		} else {
-			user := tools.User{Username: username, Firstname: firsname, Lastname: lastname, Password: password}
+			user := tools.User{Username: username, Firstname: firsname, Lastname: lastname, Password: hashedPassword}
 			userid := tools.GenerateUUID()
 			sessionid := tools.GenerateUUID()
 			tools.SetCookie(w, r, userid, sessionid)
