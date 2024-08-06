@@ -8,6 +8,16 @@ import (
 	"net/http"
 )
 
+type User struct {
+	Username  string
+	Firstname string
+	Lastname  string
+	Password  string
+}
+
+var Dbusers = map[string]User{}     //user id -> user
+var Dbsession = map[string]string{} //session id -> user id
+
 type datatosend struct {
 	D1 string
 }
@@ -77,27 +87,26 @@ func GenerateCSRFT() string {
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	return base64.StdEncoding.EncodeToString(bytesSlices)
 }
 
 func GenerateUUID() string {
-	byteSlices := make([]byte, 32)
+	byteSlices := make([]byte, 33)
 	_, err := rand.Read(byteSlices)
 	if err != nil {
 		fmt.Println(err)
 	}
-	return base64.StdEncoding.EncodeToString(byteSlices)
+
+	return base64.StdEncoding.EncodeToString(byteSlices[:33])
 }
 
-func SetCookie(w http.ResponseWriter, r *http.Request) {
-	uuid := GenerateUUID()
-	_, err := r.Cookie("session")
-	if err != nil {
-		http.SetCookie(w, &http.Cookie{Name: "session", Value: uuid})
-		fmt.Fprintf(w, "Cookie has been set to your browser")
-	} else {
-		fmt.Fprintf(w, "You already has a session cookie")
-	}
+func SetCookie(w http.ResponseWriter, r *http.Request, user_id string, session_id string) {
+	http.SetCookie(w, &http.Cookie{Name: "session_id", Value: user_id})
+}
+
+func SetCookieTwo(w http.ResponseWriter, r *http.Request) {
+	http.SetCookie(w, &http.Cookie{Name: "Name", Value: "Value"})
 
 }
 

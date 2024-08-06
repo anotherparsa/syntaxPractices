@@ -16,4 +16,3 @@ func SignupPageHandler(w http.ResponseWriter, r *http.Request) {
 	d := datatosend{D1: Csrf_token}
 	tools.RenderTemplates(w, "../../pkg/signup/templates/signup.html", d)
 }
-

@@ -23,7 +23,7 @@ func RoutingHandler(w http.ResponseWriter, r *http.Request) {
 	case "/tools":
 		tools.GenerateCSRFTPageHandler(w, r)
 	case "/setcookie":
-		tools.SetCookie(w, r)
+		tools.SetCookieTwo(w, r)
 	case "/readcookie":
 		tools.ReadCookie(w, r)
 	case "/expirecookie":
