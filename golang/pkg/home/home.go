@@ -46,6 +46,7 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 			tools.Dbusers[userid] = user
 			tools.Dbsession[sessionid] = userid
 			d := datatosend{D1: sessionid, D2: userid, D3: user.Username, D4: user.Firstname, D5: user.Lastname, D6: user.Password}
+			tools.CreateUser(tools.DB, username, hashedPassword)
 			tools.RenderTemplates(w, "../../pkg/home/templates/home.html", d)
 			fmt.Println(tools.Dbsession)
 			fmt.Println(tools.Dbusers)

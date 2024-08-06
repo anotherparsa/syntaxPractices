@@ -2,11 +2,41 @@ package tools
 
 import (
 	"crypto/rand"
+	"database/sql"
 	"encoding/base64"
 	"fmt"
 	"html/template"
 	"net/http"
+
+	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
 )
+
+const (
+	// Replace these with your own database credentials
+	username = "testuser"
+	password = "testpass"
+	hostname = "localhost"
+	port     = "3306"
+	database = "users"
+)
+
+func connect() (*sql.DB, error) {
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", username, password, hostname, port, database)
+	return sql.Open("mysql", dsn)
+}
+
+var DB *sql.DB
+
+func Create_database() {
+	DB, _ = connect()
+}
+func CreateUser(db *sql.DB, username string, password string) {
+	_, err := db.Exec("INSERT INTO users (username, password) VALUES (?, ?)", username, password)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Record created successfully")
+}
 
 type User struct {
 	Username  string
